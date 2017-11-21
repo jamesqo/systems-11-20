@@ -3,6 +3,9 @@
 #include "child.h"
 #include "parent.h"
 
+#define READ 0
+#define WRITE 1
+
 int main() {
     // TODO: Check everything for errors.
     int forward_fds[2];

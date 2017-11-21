@@ -11,16 +11,19 @@ endif
 all: main
 
 main.o: main.c child.h parent.h
-	gcc -c $<
+	gcc $(CFLAGS) -c $<
 
 child.o: child.c child.h
-	gcc -c $<
+	gcc $(CFLAGS) -c $<
 
 parent.o: parent.c parent.h
-	gcc -c $<
+	gcc $(CFLAGS) -c $<
 
 main: main.o child.o parent.o
 	gcc -o $@ $^
 
 clean:
-	rm *~ *.exe .*.swp *.o main
+	rm -f *~ *.exe .*.swp *.o main
+
+run: all
+	./main
