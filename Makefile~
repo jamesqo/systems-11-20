@@ -1,4 +1,0 @@
-all: main
-
-main: main.o parent.o child.o
-    gcc -o main 
